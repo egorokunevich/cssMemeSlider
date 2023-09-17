@@ -1,9 +1,12 @@
+body {
+  background-color: #3d4350;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 2em;
-  height: 100vh;
 }
 
 .slider-container {
@@ -12,12 +15,12 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 50vh;
+  row-gap: 1em;
 }
 
 .slides-container {
   overflow: hidden;
-  width: 50vw;
+  width: 40vw;
 }
 
 .slides {
@@ -28,11 +31,15 @@
 
 .slide-wrap {
   width: 25%;
+  border-radius: 1em;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .slide {
   width: 100%;
   height: 100%;
+  border-radius: 1em;
 }
 
 .input {
@@ -43,17 +50,18 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 1em;
 }
 
 .descriptions {
   display: flex;
   justify-content: flex-start;
-  width: 100%;
-  min-width: 100%;
   overflow: hidden;
 }
 .description {
-  width: 100%;
+  min-width: 400%;
+  color: white;
+  transition: all 0.5s ease-in-out;
 }
 
 .controls {
@@ -66,24 +74,45 @@
   height: 0.8em;
   margin: 0.3em;
   cursor: pointer;
-  background-color: #000;
-  opacity: 0.5;
+  background-color: #a4b6f1;
+  opacity: 1;
   border-radius: 10px;
   transition: all 0.4s ease;
 }
 
-#i1:checked ~ .slide-wrap {
+.label:active {
+  background-color: rgba(rgba(0, 0, 0, 0), green, blue, alpha);
+  border: 1px solid #a4b6f1;
+}
+
+#i1:checked ~ .slides .slide-wrap {
   transform: translateX(0);
 }
 
-#i2:checked ~ .slide-wrap {
+#i2:checked ~ .slides .slide-wrap {
   transform: translateX(-100%);
 }
 
-#i3:checked ~ .slide-wrap {
+#i3:checked ~ .slides .slide-wrap {
   transform: translateX(-200%);
 }
 
-#i4:checked ~ .slide-wrap {
+#i4:checked ~ .slides .slide-wrap {
+  transform: translateX(-300%);
+}
+
+#i1:checked ~ .description-controls-container .descriptions .description {
+  transform: translateX(0);
+}
+
+#i2:checked ~ .description-controls-container .descriptions .description {
+  transform: translateX(-100%);
+}
+
+#i3:checked ~ .description-controls-container .descriptions .description {
+  transform: translateX(-200%);
+}
+
+#i4:checked ~ .description-controls-container .descriptions .description {
   transform: translateX(-300%);
 }
