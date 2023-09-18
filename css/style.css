@@ -90,10 +90,19 @@ body {
 }
 
 .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  padding: 0.3em;
+  cursor: pointer;
+}
+
+.label-bullet {
   display: block;
   width: 0.8em;
   height: 0.8em;
-  margin: 0.3em;
   cursor: pointer;
   background-color: #a4b6f1;
   opacity: 1;
@@ -102,16 +111,16 @@ body {
   box-sizing: border-box;
 }
 
-.label:hover {
+.label:hover .label-bullet {
   background-color: #d8dff5;
 }
 
-.label:focus {
+.label:focus .label-bullet {
   background-color: rgba(rgba(0, 0, 0, 0), green, blue, alpha);
   border: 0.1em solid #a4b6f1;
 }
 
-.label:active {
+.label:active .label-bullet {
   border: 0.1em solid #ffffff;
   background-color: #6a77a0;
 }
@@ -151,22 +160,38 @@ body {
 }
 
 /* Label scroll */
-#i1:checked ~ .description-controls-container .controls .label:nth-child(1) {
+#i1:checked
+  ~ .description-controls-container
+  .controls
+  .label:nth-child(1)
+  .label-bullet {
   background-color: rgba(0, 0, 0, 0);
   border: 0.1em solid #a4b6f1;
 }
 
-#i2:checked ~ .description-controls-container .controls .label:nth-child(2) {
+#i2:checked
+  ~ .description-controls-container
+  .controls
+  .label:nth-child(2)
+  .label-bullet {
   background-color: rgba(0, 0, 0, 0);
   border: 0.1em solid #a4b6f1;
 }
 
-#i3:checked ~ .description-controls-container .controls .label:nth-child(3) {
+#i3:checked
+  ~ .description-controls-container
+  .controls
+  .label:nth-child(3)
+  .label-bullet {
   background-color: rgba(0, 0, 0, 0);
   border: 0.1em solid #a4b6f1;
 }
 
-#i4:checked ~ .description-controls-container .controls .label:nth-child(4) {
+#i4:checked
+  ~ .description-controls-container
+  .controls
+  .label:nth-child(4)
+  .label-bullet {
   background-color: rgba(0, 0, 0, 0);
   border: 0.1em solid #a4b6f1;
 }
